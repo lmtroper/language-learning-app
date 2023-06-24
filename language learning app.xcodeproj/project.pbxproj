@@ -26,15 +26,18 @@
 		29E925AB2A3AD12A002E2CDE /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925AA2A3AD12A002E2CDE /* AuthenticationManager.swift */; };
 		29E925AC2A3AD12A002E2CDE /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925AA2A3AD12A002E2CDE /* AuthenticationManager.swift */; };
 		29E925AE2A3AD76B002E2CDE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925AD2A3AD76B002E2CDE /* RootView.swift */; };
-		29E925AF2A3AD76B002E2CDE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925AD2A3AD76B002E2CDE /* RootView.swift */; };
 		29E925B12A3AD987002E2CDE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925B02A3AD987002E2CDE /* SettingsView.swift */; };
-		29E925B22A3AD987002E2CDE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925B02A3AD987002E2CDE /* SettingsView.swift */; };
 		29E925B52A3C2457002E2CDE /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 29E925B42A3C2457002E2CDE /* GoogleSignIn */; };
 		29E925B72A3C2457002E2CDE /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 29E925B62A3C2457002E2CDE /* GoogleSignInSwift */; };
 		29E925BB2A3C26B6002E2CDE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925BA2A3C26B6002E2CDE /* Utilities.swift */; };
 		29E925BD2A3C2DA7002E2CDE /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925BC2A3C2DA7002E2CDE /* SignInGoogleHelper.swift */; };
 		29E925C52A478198002E2CDE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29E925C42A478198002E2CDE /* FirebaseFirestore */; };
 		29E925C72A47819D002E2CDE /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 29E925C62A47819D002E2CDE /* FirebaseFirestoreSwift */; };
+		29E925CB2A47827D002E2CDE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925CA2A47827D002E2CDE /* SettingsViewModel.swift */; };
+		29E925CE2A4782C4002E2CDE /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925CD2A4782C4002E2CDE /* AuthenticationViewModel.swift */; };
+		29E925D12A478329002E2CDE /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925D02A478329002E2CDE /* SignInEmailViewModel.swift */; };
+		29E925D62A47837D002E2CDE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925D52A47837D002E2CDE /* ProfileView.swift */; };
+		29E925D92A4787FE002E2CDE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925D82A4787FE002E2CDE /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,11 @@
 		29E925B82A3C247F002E2CDE /* language-learning-app--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "language-learning-app--iOS--Info.plist"; sourceTree = "<group>"; };
 		29E925BA2A3C26B6002E2CDE /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		29E925BC2A3C2DA7002E2CDE /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
+		29E925CA2A47827D002E2CDE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		29E925CD2A4782C4002E2CDE /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		29E925D02A478329002E2CDE /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
+		29E925D52A47837D002E2CDE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		29E925D82A4787FE002E2CDE /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,8 @@
 		2951CDD52A37E3DC006DE393 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				29E925D72A4787F4002E2CDE /* Firestore */,
+				29E925C82A478229002E2CDE /* Core Views */,
 				29E925B92A3C269D002E2CDE /* Utilities */,
 				29E925A32A3ACDAE002E2CDE /* Authentication */,
 				2951CDD62A37E3DC006DE393 /* language_learning_appApp.swift */,
@@ -125,11 +135,7 @@
 		29E925A32A3ACDAE002E2CDE /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				29E925AD2A3AD76B002E2CDE /* RootView.swift */,
-				29E925A42A3ACDCC002E2CDE /* AuthenticationView.swift */,
-				29E925A72A3ACF45002E2CDE /* SignInEmailView.swift */,
 				29E925AA2A3AD12A002E2CDE /* AuthenticationManager.swift */,
-				29E925B02A3AD987002E2CDE /* SettingsView.swift */,
 				29E925BC2A3C2DA7002E2CDE /* SignInGoogleHelper.swift */,
 			);
 			path = Authentication;
@@ -148,6 +154,61 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29E925C82A478229002E2CDE /* Core Views */ = {
+			isa = PBXGroup;
+			children = (
+				29E925D22A47834F002E2CDE /* Profile */,
+				29E925CC2A4782A6002E2CDE /* Authentication */,
+				29E925C92A478269002E2CDE /* Settings */,
+				29E925AD2A3AD76B002E2CDE /* RootView.swift */,
+			);
+			path = "Core Views";
+			sourceTree = "<group>";
+		};
+		29E925C92A478269002E2CDE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				29E925B02A3AD987002E2CDE /* SettingsView.swift */,
+				29E925CA2A47827D002E2CDE /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		29E925CC2A4782A6002E2CDE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				29E925CF2A4782EA002E2CDE /* Subviews */,
+				29E925A42A3ACDCC002E2CDE /* AuthenticationView.swift */,
+				29E925CD2A4782C4002E2CDE /* AuthenticationViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		29E925CF2A4782EA002E2CDE /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				29E925A72A3ACF45002E2CDE /* SignInEmailView.swift */,
+				29E925D02A478329002E2CDE /* SignInEmailViewModel.swift */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		29E925D22A47834F002E2CDE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				29E925D52A47837D002E2CDE /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		29E925D72A4787F4002E2CDE /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				29E925D82A4787FE002E2CDE /* UserManager.swift */,
+			);
+			path = Firestore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +326,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E925B12A3AD987002E2CDE /* SettingsView.swift in Sources */,
+				29E925D62A47837D002E2CDE /* ProfileView.swift in Sources */,
+				29E925D92A4787FE002E2CDE /* UserManager.swift in Sources */,
 				2951CDE82A37E3E0006DE393 /* ContentView.swift in Sources */,
 				2951CDE62A37E3E0006DE393 /* language_learning_appApp.swift in Sources */,
 				29E925AE2A3AD76B002E2CDE /* RootView.swift in Sources */,
+				29E925CE2A4782C4002E2CDE /* AuthenticationViewModel.swift in Sources */,
+				29E925D12A478329002E2CDE /* SignInEmailViewModel.swift in Sources */,
 				29E925BD2A3C2DA7002E2CDE /* SignInGoogleHelper.swift in Sources */,
+				29E925CB2A47827D002E2CDE /* SettingsViewModel.swift in Sources */,
 				29E925A52A3ACDCC002E2CDE /* AuthenticationView.swift in Sources */,
 				29E925AB2A3AD12A002E2CDE /* AuthenticationManager.swift in Sources */,
 				29E925BB2A3C26B6002E2CDE /* Utilities.swift in Sources */,
@@ -280,10 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E925B22A3AD987002E2CDE /* SettingsView.swift in Sources */,
 				2951CDE92A37E3E0006DE393 /* ContentView.swift in Sources */,
 				2951CDE72A37E3E0006DE393 /* language_learning_appApp.swift in Sources */,
-				29E925AF2A3AD76B002E2CDE /* RootView.swift in Sources */,
 				29E925A62A3ACDCC002E2CDE /* AuthenticationView.swift in Sources */,
 				29E925AC2A3AD12A002E2CDE /* AuthenticationManager.swift in Sources */,
 				29E925A92A3ACF45002E2CDE /* SignInEmailView.swift in Sources */,
