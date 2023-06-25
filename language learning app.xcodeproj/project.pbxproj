@@ -38,6 +38,9 @@
 		29E925D12A478329002E2CDE /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925D02A478329002E2CDE /* SignInEmailViewModel.swift */; };
 		29E925D62A47837D002E2CDE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925D52A47837D002E2CDE /* ProfileView.swift */; };
 		29E925D92A4787FE002E2CDE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925D82A4787FE002E2CDE /* UserManager.swift */; };
+		29E925DD2A47CB3A002E2CDE /* FlashcardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925DC2A47CB3A002E2CDE /* FlashcardManager.swift */; };
+		29E925E02A47CB65002E2CDE /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925DF2A47CB65002E2CDE /* FlashcardView.swift */; };
+		29E925E32A47D820002E2CDE /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E925E22A47D820002E2CDE /* TabbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		29E925D02A478329002E2CDE /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
 		29E925D52A47837D002E2CDE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		29E925D82A4787FE002E2CDE /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		29E925DC2A47CB3A002E2CDE /* FlashcardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardManager.swift; sourceTree = "<group>"; };
+		29E925DF2A47CB65002E2CDE /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+		29E925E22A47D820002E2CDE /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,8 @@
 		29E925C82A478229002E2CDE /* Core Views */ = {
 			isa = PBXGroup;
 			children = (
+				29E925E12A47D814002E2CDE /* Tabbar */,
+				29E925DE2A47CB55002E2CDE /* Flashcards */,
 				29E925D22A47834F002E2CDE /* Profile */,
 				29E925CC2A4782A6002E2CDE /* Authentication */,
 				29E925C92A478269002E2CDE /* Settings */,
@@ -207,8 +215,25 @@
 			isa = PBXGroup;
 			children = (
 				29E925D82A4787FE002E2CDE /* UserManager.swift */,
+				29E925DC2A47CB3A002E2CDE /* FlashcardManager.swift */,
 			);
 			path = Firestore;
+			sourceTree = "<group>";
+		};
+		29E925DE2A47CB55002E2CDE /* Flashcards */ = {
+			isa = PBXGroup;
+			children = (
+				29E925DF2A47CB65002E2CDE /* FlashcardView.swift */,
+			);
+			path = Flashcards;
+			sourceTree = "<group>";
+		};
+		29E925E12A47D814002E2CDE /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				29E925E22A47D820002E2CDE /* TabbarView.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,15 +351,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E925B12A3AD987002E2CDE /* SettingsView.swift in Sources */,
+				29E925E02A47CB65002E2CDE /* FlashcardView.swift in Sources */,
 				29E925D62A47837D002E2CDE /* ProfileView.swift in Sources */,
 				29E925D92A4787FE002E2CDE /* UserManager.swift in Sources */,
 				2951CDE82A37E3E0006DE393 /* ContentView.swift in Sources */,
 				2951CDE62A37E3E0006DE393 /* language_learning_appApp.swift in Sources */,
 				29E925AE2A3AD76B002E2CDE /* RootView.swift in Sources */,
 				29E925CE2A4782C4002E2CDE /* AuthenticationViewModel.swift in Sources */,
+				29E925DD2A47CB3A002E2CDE /* FlashcardManager.swift in Sources */,
 				29E925D12A478329002E2CDE /* SignInEmailViewModel.swift in Sources */,
 				29E925BD2A3C2DA7002E2CDE /* SignInGoogleHelper.swift in Sources */,
 				29E925CB2A47827D002E2CDE /* SettingsViewModel.swift in Sources */,
+				29E925E32A47D820002E2CDE /* TabbarView.swift in Sources */,
 				29E925A52A3ACDCC002E2CDE /* AuthenticationView.swift in Sources */,
 				29E925AB2A3AD12A002E2CDE /* AuthenticationManager.swift in Sources */,
 				29E925BB2A3C26B6002E2CDE /* Utilities.swift in Sources */,

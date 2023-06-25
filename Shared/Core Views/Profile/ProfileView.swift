@@ -26,12 +26,34 @@ final class ProfileViewModel: ObservableObject {
         }
     }
     
+    func addUserLanguage(text: String) {
+        guard let user else {return}
+        Task {
+            try await UserManager.shared.addUserLanguage(userId: user.userId, language: text)
+            self.user = try await UserManager.shared.getUser(userId: user.userId)
+        }
+    }
+    
+    func removeUserLanguage(text: String) {
+        guard let user else {return}
+        Task {
+            try await UserManager.shared.removeUserLanguage(userId: user.userId, language: text)
+            self.user = try await UserManager.shared.getUser(userId: user.userId)
+        }
+    }
+    
 }
 
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
     @Binding var showSignInView: Bool
+    
+    let languageOptions: [String] = ["English", "French", "Spanish", "Polish", "Italian"]
+    
+    private func languageIsSelected(text: String) -> Bool {
+        viewModel.user?.languages?.contains(text) == true
+    }
     
     var body: some View {
         List{
@@ -46,6 +68,25 @@ struct ProfileView: View {
                     viewModel.togglePremiumStatus()
                 } label: {
                     Text("User is premium: \((user.isPremium ?? false).description.capitalized)")
+                }
+                
+                VStack {
+                    HStack{
+                        ForEach(languageOptions, id: \.self) { language in
+                            Button(language) {
+                                if languageIsSelected(text: language) {
+                                    viewModel.removeUserLanguage(text: language)
+                                } else {
+                                    viewModel.addUserLanguage(text: language)
+                                }
+                            }
+                            .font(.headline)
+                            .buttonStyle(.borderedProminent)
+                            .tint(languageIsSelected(text: language) ? .green : .red)
+                        }
+                        
+                    }
+                    Text("User Languages: \((user.languages ?? []).joined(separator: ", "))").frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }
