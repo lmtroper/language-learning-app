@@ -21,7 +21,7 @@ struct TabbarView: View {
                 Text("Profile")
             }
             NavigationView {
-                FlashcardView(showSignInView: $showSignInView)
+                LanguageView(showSignInView: $showSignInView)
 
             }
             .tabItem {

@@ -83,11 +83,19 @@ final class UserManager {
         userCollection.document(userId)
     }
     
+//    private func userFlashcardCollectionByLanguage(userId: String, language:String) -> CollectionReference {
+//        userDocument(userId: userId).collection("\(language)_flashcard_collection")
+//    }
+    
+//    private func userFlashcardDocumentByLanguageCollection(userId: String, language:String, flashcardCollectionId: String) -> DocumentReference {
+//        userFlashcardCollectionByLanguage(userId: userId, language:language).document(flashcardCollectionId)
+//    }
+//
     private func userFlashcardCollection(userId: String) -> CollectionReference {
         userDocument(userId: userId).collection("flashcards")
     }
     
-    private func userFlashcardDocument(userId: String, flashcardId: String) -> DocumentReference {
+    private func userFlashcardDocument(userId: String, flashcardId: String, language: String) -> DocumentReference {
         userFlashcardCollection(userId: userId).document(flashcardId)
     }
     
@@ -120,6 +128,39 @@ final class UserManager {
         try await userDocument(userId: userId).updateData(data)
     }
     
+    func addFlashcardCollection(userId: String, language:String) async throws {
+        let document = userFlashcardCollection(userId: userId).document("\(language)_flashcards")
+        
+        do {
+            let documentSnapshot = try await document.getDocument()
+
+            if !documentSnapshot.exists {
+                let data: [String: Any] = [
+                    "language": language,
+                    "date_created": Timestamp()
+                ]
+                try await document.setData(data, merge: false)
+            }
+        } catch {
+            print("Error retrieving or creating document: \(error)")
+        }
+    }
+    
+    func getFlashcardCollections(userId: String) async throws {
+        let collection = userFlashcardCollection(userId: userId)
+        
+        do {
+            let querySnapshot = try await collection.getDocuments()
+            for document in querySnapshot.documents {
+                print(document.data())
+                print(document.documentID)
+            }
+        } catch {
+            throw error
+        }
+    }
+    
+    
     func addUserFlashcard(userId: String, flashcardId: String, term: String, answer: String, isActive: Bool, status: Bool) async throws {
         let document = userFlashcardCollection(userId: userId).document()
         let documentId = document.documentID
@@ -137,8 +178,8 @@ final class UserManager {
         try await document.setData(data, merge: false)
     }
     
-    func removeUserFlashcard(userId: String, flashcardId: String) async throws {
-        try await userFlashcardDocument(userId: userId, flashcardId: flashcardId).delete()
-    }
+//    func removeUserFlashcard(userId: String, flashcardId: String) async throws {
+//        try await userFlashcardDocument(userId: userId, flashcardId: flashcardId).delete()
+//    }
     
 }
